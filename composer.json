@@ -1,7 +1,7 @@
 {
     "name": "regionhalland/visithalland-custom-post-types",
     "description": "Wordpress plugin for adding custom post types used on https://www.visithalland.com.",
-    "type": "wordpress-plugin",
+    "type": "wordpress-muplugin",
     "license": "GPL-3.0-only",
     "authors": [
         {
