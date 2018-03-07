@@ -9,5 +9,7 @@
             "email": "sebastian@digitaliseringsbyran.se"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7"
+    }
 }
