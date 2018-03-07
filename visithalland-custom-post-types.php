@@ -9,6 +9,7 @@ Version: 0.9
 Author URI: https://github.com/sebastiansson
 */
 
+
 /**
  *
  * Register Meet Local custom post type
