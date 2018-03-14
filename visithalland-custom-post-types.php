@@ -9,13 +9,24 @@ Version: 0.9
 Author URI: https://github.com/sebastiansson
 */
 
+define(
+    'VISITHALLAND_POST_TYPES',
+    array(
+        'meet_local',
+        'editor_tip',
+        'trip',
+        'happening',
+        'places',
+        'companies'
+    )
+);
 
 /**
  *
  * Register Meet Local custom post type
  *
  */
-if ( !post_type_exists('meet_local') ) {
+if ( !post_type_exists(VISITHALLAND_POST_TYPES[0]) ) {
     function custom_post_type_meet_local()
     {
         $labels = array(
@@ -45,7 +56,7 @@ if ( !post_type_exists('meet_local') ) {
             'menu_icon'           => 'dashicons-admin-users',
             'rewrite' => array( 'slug' => '%taxonomy_concept%/meet-a-local', 'with_front' => false )
         );
-        register_post_type('meet_local', $args);
+        register_post_type(VISITHALLAND_POST_TYPES[0], $args);
     }
 
     add_action('init', 'custom_post_type_meet_local');
@@ -56,7 +67,7 @@ if ( !post_type_exists('meet_local') ) {
  * Register Meet Local custom post type
  *
  */
-if (!post_type_exists('editor_tip')) {
+if (!post_type_exists(VISITHALLAND_POST_TYPES[1])) {
     function custom_post_type_editor_tip()
     {
         $labels = array(
@@ -86,7 +97,7 @@ if (!post_type_exists('editor_tip')) {
             'menu_icon'           => 'dashicons-admin-users',
             'rewrite' => array( 'slug' => '%taxonomy_concept%/editor_tip', 'with_front' => false )
         );
-        register_post_type('editor_tip', $args);
+        register_post_type(VISITHALLAND_POST_TYPES[1], $args);
     }
 
     add_action('init', 'custom_post_type_editor_tip');
@@ -97,7 +108,7 @@ if (!post_type_exists('editor_tip')) {
  * Register Meet Local custom post type
  *
  */
-if (!post_type_exists('trip')) {
+if (!post_type_exists(VISITHALLAND_POST_TYPES[2])) {
     function custom_post_type_spotlights()
     {
         $labels = array(
@@ -127,7 +138,7 @@ if (!post_type_exists('trip')) {
             'menu_icon'           => 'dashicons-location-alt',
             'rewrite' => array( 'slug' => '%taxonomy_concept%/spotlight', 'with_front' => false )
         );
-        register_post_type('trip', $args);
+        register_post_type(VISITHALLAND_POST_TYPES[2], $args);
     }
     add_action('init', 'custom_post_type_spotlights');
 }
@@ -138,7 +149,7 @@ if (!post_type_exists('trip')) {
  * Register Meet Local custom post type
  *
  */
-if (!post_type_exists('happening')) {
+if (!post_type_exists(VISITHALLAND_POST_TYPES[3])) {
     // Register Happenings
     function custom_post_type_happenings()
     {
@@ -169,7 +180,7 @@ if (!post_type_exists('happening')) {
             'menu_icon'           => 'dashicons-calendar-alt',
             'rewrite' => array( 'slug' => '%taxonomy_concept%/happening', 'with_front' => false )
         );
-        register_post_type('happening', $args);
+        register_post_type(VISITHALLAND_POST_TYPES[3], $args);
     }
     add_action('init', 'custom_post_type_happenings', 1);
 
@@ -181,7 +192,7 @@ if (!post_type_exists('happening')) {
  * Register Meet Local custom post type
  *
  */
-if (!post_type_exists('place')) {
+if (!post_type_exists(VISITHALLAND_POST_TYPES[4])) {
     function custom_post_type_places()
     {
         $labels = array(
@@ -211,7 +222,7 @@ if (!post_type_exists('place')) {
             'menu_icon'           => 'dashicons-location-alt',
             'rewrite' => array( 'slug' => 'place', 'with_front' => false )
         );
-        register_post_type('places', $args);
+        register_post_type(VISITHALLAND_POST_TYPES[4], $args);
     }
     add_action('init', 'custom_post_type_places');
 }
@@ -221,7 +232,7 @@ if (!post_type_exists('place')) {
  * Register Meet Local custom post type
  *
  */
-if (!post_type_exists('company')) {
+if (!post_type_exists(VISITHALLAND_POST_TYPES[5])) {
     // Register companies
     function custom_post_type_companies()
     {
@@ -252,7 +263,7 @@ if (!post_type_exists('company')) {
             'menu_icon'           => 'dashicons-store',
             'rewrite' => array( 'slug' => 'business', 'with_front' => false )
         );
-        register_post_type('companies', $args);
+        register_post_type(VISITHALLAND_POST_TYPES[5], $args);
     }
     add_action('init', 'custom_post_type_companies');
 
