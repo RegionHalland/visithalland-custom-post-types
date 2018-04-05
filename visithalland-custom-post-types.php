@@ -5,7 +5,7 @@ Plugin Name: Visithalland Custom Post Types
 Plugin URI: https://github.com/RegionHalland/visithalland-cms
 Description: Wordpress plugin for adding custom post types used on https://www.visithalland.com.
 Author: Sebastian Marcusson
-Version: 0.9
+Version: 1.0
 Author URI: https://github.com/sebastiansson
 */
 
@@ -25,7 +25,8 @@ class VisithallandCustomPostTypes
             'trip',
             'happening',
             'places',
-            'companies'
+            'companies',
+            'activity'
         );
 
         return define(
@@ -79,7 +80,7 @@ class VisithallandCustomPostTypes
 
         /**
          *
-         * Register Meet Local custom post type
+         * Register Editor Tip custom post type
          *
          */
         if (!post_type_exists(VISITHALLAND_POST_TYPES[1])) {
@@ -120,7 +121,7 @@ class VisithallandCustomPostTypes
 
         /**
          *
-         * Register Meet Local custom post type
+         * Register Spotlight (prev. Trip) custom post type
          *
          */
         if (!post_type_exists(VISITHALLAND_POST_TYPES[2])) {
@@ -161,7 +162,7 @@ class VisithallandCustomPostTypes
 
         /**
          *
-         * Register Meet Local custom post type
+         * Register Happenings custom post type
          *
          */
         if (!post_type_exists(VISITHALLAND_POST_TYPES[3])) {
@@ -203,7 +204,7 @@ class VisithallandCustomPostTypes
 
         /**
          *
-         * Register Meet Local custom post type
+         * Register Places custom post type
          *
          */
         if (!post_type_exists(VISITHALLAND_POST_TYPES[4])) {
@@ -243,7 +244,7 @@ class VisithallandCustomPostTypes
 
         /**
          *
-         * Register Meet Local custom post type
+         * Register Companies custom post type
          *
          */
         if (!post_type_exists(VISITHALLAND_POST_TYPES[5])) {
@@ -281,6 +282,48 @@ class VisithallandCustomPostTypes
             }
             add_action('init', 'custom_post_type_companies');
         }
+
+        /**
+         *
+         * Register Activity custom post type
+         *
+         */
+        if (!post_type_exists(VISITHALLAND_POST_TYPES[6])) {
+            // Register activity
+            function custom_post_type_activity()
+            {
+                $labels = array(
+                    'name'                  => _x('A Day in Halland', 'Post Type General Name', 'visithalland'),
+                    'singular_name'         => _x('A Day in Halland', 'Post Type Singular Name', 'visithalland'),
+                    'menu_name'             => __('A Day in Halland', 'visithalland'),
+                    'name_admin_bar'        => __('A Day in Halland', 'visithalland'),
+                );
+                $args = array(
+                    'label'                 => __('A Day in Halland', 'visithalland'),
+                    'description'           => __('Aktiviteter som används i A Day in Halland', 'visithalland'),
+                    'labels'                => $labels,
+                    'supports'              => array('title', 'author', 'revisions', 'thumbnail', 'editor'),
+                    'hierarchical'          => false,
+                    'public'                => true,
+                    'show_ui'               => true,
+                    'show_in_menu'          => true,
+                    'menu_position'         => 3,
+                    'show_in_admin_bar'     => true,
+                    'show_in_nav_menus'     => true,
+                    'can_export'            => true,
+                    'has_archive'           => false,
+                    'exclude_from_search'   => false,
+                    'publicly_queryable'    => true,
+                    'capability_type'       => 'post',
+                    'show_in_rest'       => true,
+                    'menu_icon'           => 'dashicons-palmtree',
+                    'rewrite' => array( 'slug' => 'activity', 'with_front' => false )
+                );
+                register_post_type(VISITHALLAND_POST_TYPES[6], $args);
+            }
+            add_action('init', 'custom_post_type_activity');
+        }
+
     }
 }
 
