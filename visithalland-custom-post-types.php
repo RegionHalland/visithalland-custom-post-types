@@ -26,7 +26,8 @@ class VisithallandCustomPostTypes
             'happening',
             'places',
             'companies',
-            'activity'
+            'activity',
+            'event'
         );
 
         return define(
@@ -324,6 +325,46 @@ class VisithallandCustomPostTypes
             add_action('init', 'custom_post_type_activity');
         }
 
+        /**
+         *
+         * Register Event custom post type
+         *
+         */
+        if (!post_type_exists(VISITHALLAND_POST_TYPES[7])) {
+            // Register activity
+            function custom_post_type_event()
+            {
+                $labels = array(
+                    'name'                  => _x('Event', 'Post Type General Name', 'visithalland'),
+                    'singular_name'         => _x('Event', 'Post Type Singular Name', 'visithalland'),
+                    'menu_name'             => __('Events', 'visithalland'),
+                    'name_admin_bar'        => __('Event', 'visithalland'),
+                );
+                $args = array(
+                    'label'                 => __('Events', 'visithalland'),
+                    'description'           => __('Events som inte är en reseanledning och därför inte passar under Happenings.', 'visithalland'),
+                    'labels'                => $labels,
+                    'supports'              => array('title', 'author', 'revisions', 'thumbnail', 'editor'),
+                    'hierarchical'          => false,
+                    'public'                => true,
+                    'show_ui'               => true,
+                    'show_in_menu'          => true,
+                    'menu_position'         => 3,
+                    'show_in_admin_bar'     => true,
+                    'show_in_nav_menus'     => true,
+                    'can_export'            => true,
+                    'has_archive'           => false,
+                    'exclude_from_search'   => false,
+                    'publicly_queryable'    => true,
+                    'capability_type'       => 'post',
+                    'show_in_rest'       => true,
+                    'menu_icon'           => 'dashicons-calendar',
+                    'rewrite' => array( 'slug' => 'event', 'with_front' => false )
+                );
+                register_post_type(VISITHALLAND_POST_TYPES[7], $args);
+            }
+            add_action('init', 'custom_post_type_event');
+        }
     }
 }
 
