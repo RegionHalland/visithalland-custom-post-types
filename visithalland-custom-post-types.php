@@ -27,8 +27,7 @@ class VisithallandCustomPostTypes
             'places',
             'companies',
             'activity',
-            'event',
-            'weekend'
+            'event'
         );
 
         return define(
@@ -365,47 +364,6 @@ class VisithallandCustomPostTypes
                 register_post_type(VISITHALLAND_POST_TYPES[7], $args);
             }
             add_action('init', 'custom_post_type_event');
-        }
-
-        /**
-         *
-         * Register Weekends custom post type
-         *
-         */
-        if (!post_type_exists(VISITHALLAND_POST_TYPES[8])) {
-            // Register activity
-            function custom_post_type_weekend()
-            {
-                $labels = array(
-                    'name'                  => _x('Weekend', 'Post Type General Name', 'visithalland'),
-                    'singular_name'         => _x('Weekend', 'Post Type Singular Name', 'visithalland'),
-                    'menu_name'             => __('Weekends', 'visithalland'),
-                    'name_admin_bar'        => __('Weekend', 'visithalland'),
-                );
-                $args = array(
-                    'label'                 => __('Weekends', 'visithalland'),
-                    'description'           => __('Förslag på hur man bäst spenderar en helg i Halland.', 'visithalland'),
-                    'labels'                => $labels,
-                    'supports'              => array('title', 'author', 'revisions', 'thumbnail', 'editor'),
-                    'hierarchical'          => false,
-                    'public'                => true,
-                    'show_ui'               => true,
-                    'show_in_menu'          => true,
-                    'menu_position'         => 3,
-                    'show_in_admin_bar'     => true,
-                    'show_in_nav_menus'     => true,
-                    'can_export'            => true,
-                    'has_archive'           => false,
-                    'exclude_from_search'   => false,
-                    'publicly_queryable'    => true,
-                    'capability_type'       => 'post',
-                    'show_in_rest'       => true,
-                    'menu_icon'           => 'dashicons-carrot',
-                    'rewrite' => array( 'slug' => 'weekend', 'with_front' => false )
-                );
-                register_post_type(VISITHALLAND_POST_TYPES[8], $args);
-            }
-            add_action('init', 'custom_post_type_weekend');
         }
     }
 }
