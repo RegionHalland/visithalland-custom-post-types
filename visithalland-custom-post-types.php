@@ -61,7 +61,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 8,
+                    'menu_position'         => 10,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -71,7 +71,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-admin-users',
-                    'rewrite' => array( 'slug' => '%taxonomy_concept%/meet-a-local', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/meet-a-local', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[0], $args);
             }
@@ -102,7 +102,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 7,
+                    'menu_position'         => 11,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -111,8 +111,8 @@ class VisithallandCustomPostTypes
                     'publicly_queryable'    => true,
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
-                    'menu_icon'           => 'dashicons-admin-users',
-                    'rewrite' => array( 'slug' => '%taxonomy_concept%/editor_tip', 'with_front' => false )
+                    'menu_icon'           => 'dashicons-groups',
+                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/editor_tip', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[1], $args);
             }
@@ -143,7 +143,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 6,
+                    'menu_position'         => 12,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -152,8 +152,8 @@ class VisithallandCustomPostTypes
                     'publicly_queryable'    => true,
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
-                    'menu_icon'           => 'dashicons-location-alt',
-                    'rewrite' => array( 'slug' => '%taxonomy_concept%/spotlight', 'with_front' => false )
+                    'menu_icon'           => 'dashicons-star-filled',
+                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/spotlight', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[2], $args);
             }
@@ -185,7 +185,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 5,
+                    'menu_position'         => 13,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -195,7 +195,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-calendar-alt',
-                    'rewrite' => array( 'slug' => '%taxonomy_concept%/happening', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/happening', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[3], $args);
             }
@@ -226,7 +226,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 4,
+                    'menu_position'         => 14,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -236,7 +236,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-location-alt',
-                    'rewrite' => array( 'slug' => 'place', 'with_front' => false )
+                    //'rewrite' => array( 'slug' => 'place', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[4], $args);
             }
@@ -267,7 +267,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 3,
+                    'menu_position'         => 15,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -277,7 +277,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-store',
-                    'rewrite' => array( 'slug' => 'business', 'with_front' => false )
+                    //'rewrite' => array( 'slug' => 'business', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[5], $args);
             }
@@ -308,7 +308,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 3,
+                    'menu_position'         => 16,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -318,7 +318,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-palmtree',
-                    'rewrite' => array( 'slug' => 'activity', 'with_front' => false )
+                    //'rewrite' => array( 'slug' => 'activity', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[6], $args);
             }
@@ -349,7 +349,7 @@ class VisithallandCustomPostTypes
                     'public'                => true,
                     'show_ui'               => true,
                     'show_in_menu'          => true,
-                    'menu_position'         => 3,
+                    'menu_position'         => 17,
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
@@ -359,7 +359,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-calendar',
-                    'rewrite' => array( 'slug' => 'event', 'with_front' => false )
+                    //'rewrite' => array( 'slug' => 'event', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[7], $args);
             }
