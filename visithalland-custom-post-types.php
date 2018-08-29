@@ -395,7 +395,7 @@ class VisithallandCustomPostTypes
                     'show_in_admin_bar'     => true,
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
-                    'has_archive'           => false,
+                    'has_archive'           => true,
                     'exclude_from_search'   => false,
                     'publicly_queryable'    => true,
                     'capability_type'       => 'post',
