@@ -28,7 +28,8 @@ class VisithallandCustomPostTypes
             'companies',
             'activity',
             'event',
-            'tips_guides'
+            'tips_guides',
+            'editor_picks'
         );
 
         return define(
@@ -415,6 +416,49 @@ class VisithallandCustomPostTypes
                 register_post_type(VISITHALLAND_POST_TYPES[8], $args);
             }
             add_action('init', 'custom_post_type_tips_guides');
+        }
+
+
+        /**
+         *
+         * Register custom post type Redaktionens Tips
+         *
+         */
+        if (!post_type_exists(VISITHALLAND_POST_TYPES[9])) {
+            // Register activity
+            function custom_post_type_editor_picks()
+            {
+
+                $labels = array(
+                    'name'                  => _x('Redaktionens tips', 'Post Type General Name', 'visithalland'),
+                    'singular_name'         => _x('Redaktionens tips', 'Post Type Singular Name', 'visithalland'),
+                    'menu_name'             => __('Redaktionens tips', 'visithalland'),
+                    'name_admin_bar'        => __('Redaktionens tips', 'visithalland'),
+                );
+                $args = array(
+                    'label'                 => __('Redaktionens tips', 'visithalland'),
+                    'description'           => __('Redaktionens tips', 'visithalland'),
+                    'labels'                => $labels,
+                    'supports'              => array('title', 'author', 'revisions', 'thumbnail', 'editor'),
+                    'hierarchical'          => false,
+                    'public'                => true,
+                    'show_ui'               => true,
+                    'show_in_menu'          => true,
+                    'menu_position'         => 16,
+                    'show_in_admin_bar'     => true,
+                    'show_in_nav_menus'     => true,
+                    'can_export'            => true,
+                    'has_archive'           => false,
+                    'exclude_from_search'   => false,
+                    'publicly_queryable'    => true,
+                    'capability_type'       => 'post',
+                    'show_in_rest'       => true,
+                    'menu_icon'           => 'dashicons-admin-users',
+                    //'rewrite' => array( 'slug' => 'event', 'with_front' => false )
+                );
+                register_post_type(VISITHALLAND_POST_TYPES[8], $args);
+            }
+            add_action('init', 'custom_post_type_editor_picks');
         }
     }
 }
