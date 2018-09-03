@@ -456,7 +456,7 @@ class VisithallandCustomPostTypes
                     'menu_icon'           => 'dashicons-admin-users',
                     //'rewrite' => array( 'slug' => 'event', 'with_front' => false )
                 );
-                register_post_type(VISITHALLAND_POST_TYPES[8], $args);
+                register_post_type(VISITHALLAND_POST_TYPES[9], $args);
             }
             add_action('init', 'custom_post_type_editor_picks');
         }
