@@ -439,7 +439,7 @@ class VisithallandCustomPostTypes
                     'label'                 => __('Redaktionens tips', 'visithalland'),
                     'description'           => __('Redaktionens tips', 'visithalland'),
                     'labels'                => $labels,
-                    'supports'              => array('title', 'author', 'revisions', 'thumbnail', 'editor'),
+                    'supports'              => array('title', 'author', 'revisions'),
                     'hierarchical'          => false,
                     'public'                => true,
                     'show_ui'               => true,
