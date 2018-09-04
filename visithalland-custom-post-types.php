@@ -29,7 +29,7 @@ class VisithallandCustomPostTypes
             'activity',
             'event',
             'tips_guides',
-            'editor_picks'
+            'top-list'
         );
 
         return define(
@@ -315,7 +315,7 @@ class VisithallandCustomPostTypes
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
                     'has_archive'           => false,
-                    'exclude_from_search'   => false,
+                    'exclude_from_search'   => true,
                     'publicly_queryable'    => true,
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
@@ -426,18 +426,18 @@ class VisithallandCustomPostTypes
          */
         if (!post_type_exists(VISITHALLAND_POST_TYPES[9])) {
             // Register activity
-            function custom_post_type_editor_picks()
+            function custom_post_type_top_list()
             {
 
                 $labels = array(
-                    'name'                  => _x('Redaktionens tips', 'Post Type General Name', 'visithalland'),
-                    'singular_name'         => _x('Redaktionens tips', 'Post Type Singular Name', 'visithalland'),
-                    'menu_name'             => __('Redaktionens tips', 'visithalland'),
-                    'name_admin_bar'        => __('Redaktionens tips', 'visithalland'),
+                    'name'                  => _x('Topplistor', 'Post Type General Name', 'visithalland'),
+                    'singular_name'         => _x('Topplistor', 'Post Type Singular Name', 'visithalland'),
+                    'menu_name'             => __('Topplistor', 'visithalland'),
+                    'name_admin_bar'        => __('Topplistor', 'visithalland'),
                 );
                 $args = array(
-                    'label'                 => __('Redaktionens tips', 'visithalland'),
-                    'description'           => __('Redaktionens tips', 'visithalland'),
+                    'label'                 => __('Topplistor', 'visithalland'),
+                    'description'           => __('Topplistor', 'visithalland'),
                     'labels'                => $labels,
                     'supports'              => array('title', 'author', 'revisions'),
                     'hierarchical'          => false,
@@ -449,16 +449,16 @@ class VisithallandCustomPostTypes
                     'show_in_nav_menus'     => true,
                     'can_export'            => true,
                     'has_archive'           => false,
-                    'exclude_from_search'   => false,
+                    'exclude_from_search'   => true,
                     'publicly_queryable'    => true,
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
-                    'menu_icon'           => 'dashicons-admin-users',
+                    'menu_icon'           => 'dashicons-star-filled',
                     //'rewrite' => array( 'slug' => 'event', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[9], $args);
             }
-            add_action('init', 'custom_post_type_editor_picks');
+            add_action('init', 'custom_post_type_top_list');
         }
     }
 }
