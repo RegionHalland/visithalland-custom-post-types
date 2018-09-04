@@ -29,7 +29,7 @@ class VisithallandCustomPostTypes
             'activity',
             'event',
             'tips_guides',
-            'top-list'
+            'top_list'
         );
 
         return define(
