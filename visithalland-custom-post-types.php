@@ -402,7 +402,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-book',
-                    //'rewrite' => array( 'slug' => 'event', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'tips-guider')
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[8], $args);
             }
