@@ -444,7 +444,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-star-filled',
-                    //'rewrite' => array( 'slug' => 'event', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'topplistor')
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[9], $args);
             }
