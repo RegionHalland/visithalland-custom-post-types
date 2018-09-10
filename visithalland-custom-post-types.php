@@ -72,7 +72,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-admin-users',
-                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/meet-a-local', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'upplevelser/%experience%/meet-a-local', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[0], $args);
             }
@@ -112,7 +112,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-groups',
-                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/editor_tip', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'upplevelser/%experience%/editor_tip', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[1], $args);
             }
@@ -152,7 +152,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-star-filled',
-                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/spotlight', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'upplevelser/%experience%/spotlight', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[2], $args);
             }
@@ -193,7 +193,7 @@ class VisithallandCustomPostTypes
                     'capability_type'       => 'post',
                     'show_in_rest'       => true,
                     'menu_icon'           => 'dashicons-calendar-alt',
-                    'rewrite' => array( 'slug' => 'upplevelser/%taxonomy_concept%/happening', 'with_front' => false )
+                    'rewrite' => array( 'slug' => 'upplevelser/%experience%/happening', 'with_front' => false )
                 );
                 register_post_type(VISITHALLAND_POST_TYPES[3], $args);
             }
