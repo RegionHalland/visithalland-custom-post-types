@@ -373,11 +373,12 @@ class VisithallandCustomPostTypes
                 // Registers Option Page for Featured Content
                 if ( function_exists( 'acf_add_options_sub_page' ) ){
                     acf_add_options_sub_page(array(
-                        'title'      => 'Utvalda Guider',
-                        'parent'     => 'edit.php?post_type=tips_guides',
+                        'title'      => 'Tips & Guider',
+                        'parent'     => 'themes.php',
                         'capability' => 'manage_options'
                     ));
                 }
+                
                 $labels = array(
                     'name'                  => _x('Tips & Guider', 'Post Type General Name', 'visithalland'),
                     'singular_name'         => _x('Tips & Guider', 'Post Type Singular Name', 'visithalland'),
